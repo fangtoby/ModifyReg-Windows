@@ -8,10 +8,10 @@ modify windows reg
   
     >input new reg item name
     
-    >hello
+    hello
     
-    >input new reg item software path <C:\\Program Files (x86)\\Koala\\koala.exe>
+    >input new reg item software path <C:\Program Files (x86)\Koala\koala.exe>
     
-    >"C:\Program Files (x86)\Koala\koala.exe"
+    "C:\Program Files (x86)\Koala\koala.exe"
     
     >set success.

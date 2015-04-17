@@ -15,6 +15,8 @@ int main()
 	
 	char keyName[100];
 
+	char willContinue[100];
+
 readUserInput:
 	
 	printf("input new reg item name \n  >");
@@ -58,6 +60,9 @@ readSzModuleInput:
 	lRet = RegSetValueEx(hKey, keyName , 0, REG_SZ, (BYTE *)szModule, strlen(szModule));
 
 	RegCloseKey(hKey);
+	
+	memset(keyName,0,100);
+	memset(szModule,0,200);
 
 	if(lRet != ERROR_SUCCESS)
 	{
@@ -66,6 +71,22 @@ readSzModuleInput:
 	}else{
 		printf("set success.\n");
 	}
+
+	printf("Still need to continue? (y/n)\n  >");
+
+	gets(willContinue);
+
+	if(strlen(willContinue) == 1){
+		switch(willContinue[0]){
+			case 'y':
+			case 'Y':
+				memset(willContinue,0,100);
+				goto readUserInput;
+			break;
+		}
+	}
+
+	printf("bye bye!");
 
 	return 0;
 }

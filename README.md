@@ -2,9 +2,9 @@
 
 modify windows reg
 
-  gcc -o modifyReg.exe modifyReg.c
-  
-  modifyReg
+    gcc -o modifyReg.exe modifyReg.c
+    
+    modifyReg
   
     input new reg item name
     

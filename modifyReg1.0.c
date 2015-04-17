@@ -21,11 +21,19 @@ readUserInput:
 
 	gets(keyName);
 
+readSzModuleInput:
+
 	printf("input new reg item software path <C:\\Program Files (x86)\\Koala\\koala.exe> \n");
 
 	gets(szModule);
 
-	printf("szModule %d , keyName %d \n", strlen(szModule),strlen(keyName) );
+	if (access(szModule,0))
+	{
+		printf("Files dos not exist. \n");
+		goto readSzModuleInput;
+	}
+
+	printf("szModule string length: %d , keyName string length: %d \n", strlen(szModule),strlen(keyName) );
 
 	if (strlen(szModule) == 0 || strlen(keyName) == 0){
 		goto readUserInput;

@@ -17,13 +17,13 @@ int main()
 
 readUserInput:
 	
-	printf("input new reg item name \n");
+	printf("input new reg item name \n  >");
 
 	gets(keyName);
 
 readSzModuleInput:
 
-	printf("input new reg item software path <C:\\Program Files (x86)\\Koala\\koala.exe> \n");
+	printf("input new reg item software path <C:\\Program Files (x86)\\Koala\\koala.exe> \n  >");
 
 	gets(szModule);
 

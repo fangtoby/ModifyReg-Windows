@@ -15,3 +15,8 @@ modify windows reg
     "C:\Program Files (x86)\Koala\koala.exe"
     
     >set success.
+
+windows + r 
+
+regedit
+

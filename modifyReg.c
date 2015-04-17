@@ -9,6 +9,8 @@
 #include <windows.h>
 #include <stdio.h>
 
+#define ISDEBUG 0 
+
 int main()
 {
 	char szModule[200];
@@ -18,14 +20,15 @@ int main()
 	char willContinue[100];
 
 readUserInput:
-	
-	printf("input new reg item name \n  >");
+
+	SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE),FOREGROUND_INTENSITY | FOREGROUND_GREEN);
+
+	printf("input new reg item name \n>");
 
 	gets(keyName);
 
 readSzModuleInput:
-
-	printf("input new reg item software path <C:\\Program Files (x86)\\Koala\\koala.exe> \n  >");
+	printf("input new reg item software path <C:\\Program Files (x86)\\Koala\\koala.exe> \n>");
 
 	gets(szModule);
 
@@ -35,7 +38,10 @@ readSzModuleInput:
 		goto readSzModuleInput;
 	}
 
-	printf("szModule string length: %d , keyName string length: %d \n", strlen(szModule),strlen(keyName) );
+	if (ISDEBUG)
+	{
+		printf("szModule string length: %d , keyName string length: %d \n", strlen(szModule),strlen(keyName) );
+	}
 
 	if (strlen(szModule) == 0 || strlen(keyName) == 0){
 		goto readUserInput;
@@ -72,7 +78,7 @@ readSzModuleInput:
 		printf("set success.\n");
 	}
 
-	printf("Still need to continue? (y/n)\n  >");
+	printf("Still need to continue? (y/n)\n>");
 
 	gets(willContinue);
 
